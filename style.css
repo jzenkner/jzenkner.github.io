@@ -1,0 +1,380 @@
+body {
+    font-family: 'EB Garamond', sans-serif;
+    font-weight: 400;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 24px 72px;
+    line-height: 1.4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 896px;
+  width: 100%;
+  background-color: white;
+  margin: 32px 0;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  font-size: 19px;
+  margin-top: 18px;
+}
+
+/* Header */ 
+.h-image {
+    flex: 2;
+    padding: 0 56px;
+    aspect-ratio: 16 / 9; /* or any other ratio */
+    object-fit: contain; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.h-introduction {
+  flex: 1;
+  padding-bottom: 18px;
+}
+
+.h-introduction h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.h-introduction p {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.button::after {
+    content: "→";
+    margin-left: 10px;
+}
+
+sup { vertical-align: top; }
+
+
+
+.container h1 {
+  margin-bottom: 6px;
+}
+
+.container p {
+  margin-top: 6px;
+}
+
+.publication-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  margin-top: 30px;
+}
+
+.publication-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(32,33,36,0.15);
+  border-radius: 8px;
+  overflow: hidden; /* This ensures the image doesn't overflow the rounded corners */
+}
+
+.publication-card-link p {
+  color: black;
+}
+
+.publication-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.publication-card-image {
+  width: 100%;
+  height: 180px; /* Adjust this value as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.publication-card-content {
+  padding: 20px;
+  height: calc(100% - 180px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between; /* This will push the venue to the bottom */
+}
+
+.pub-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 0 0; /* Add some bottom margin */
+}
+
+.pub-venue {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  margin-top: auto; /* This pushes the venue to the bottom */
+  align-self: flex-start; /* This aligns the venue to the left */
+}
+
+/* Remove the ::before pseudo-element styles */
+
+/* Specific style for the "Measuring Progress..." card */
+.publication-card[data-bg="board"]::before {
+  background-image: url('assets/images/board_2.webp');
+}
+.publication-card[data-bg="pink"]::before {
+  background-image: url('assets/images/pink.webp');
+}
+.publication-card[data-bg="leaves"]::before {
+  background-image: url('assets/images/leaves.webp');
+} 
+
+/* Media query for screens smaller than 896px */
+@media (max-width: 896px) {
+  body {
+    margin: 0 40px;
+  }
+
+  .publication-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for screens smaller than 896px */
+@media (max-width: 600px) {
+  body {
+    margin: 0 28px;
+  }
+
+  .publication-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  .h-image {
+    order: -1;
+    padding: 0 20px;
+    margin-bottom: 30px; /* Add space between image and text on mobile */
+  }
+
+
+  .inner-image {
+    width: 70%;
+    height: 70%;
+  }
+
+
+  .publications {
+    padding: 0 20px;
+  }
+}
+
+/* @media (max-width: 600px) {
+  .publication-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .publication-date {
+    margin-bottom: 8px;
+  }
+
+  .container {
+    padding: 0;
+  }
+} */
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #e0e0e0;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* This ensures the SVG icon color matches the text color */
+}
+
+/* You can remove or comment out the previous .button styles */
+
+.social-button img[alt="Google Scholar"] {
+  width: 24px;
+  height: 24px;
+}
+
+.research-label {
+  font-size: 14px;
+  color: #2563eb;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.publication-count {
+  color: #666;
+  font-size: 14px;
+}
+
+.publications-list {
+  padding-inline-start: 25px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.publication-item {
+  display: list-item; /* This ensures the item behaves like a list item */
+  padding: 12px 0;
+  position: relative;
+  gap: 20px;
+}
+
+.publication-date {
+  font-size: 16px;
+  color: rgb(95, 99, 104);;
+}
+
+.publication-content {
+  position: relative;
+}
+
+.publication-title {
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.publication-list {
+  margin: 0;
+}
+
+.publication-links {
+  font-size: 16px;
+  color: #e06666;
+}
+.publication-links a {
+  margin-right:4px;
+}
+
+.highlighted-text {
+  color: rgb(76, 110, 230);
+  font-weight: 600;
+}
+
+.i-links {
+  font-size: 13px;
+  color: #e06666;
+}
+.i-links a {
+  margin-right:6px;
+  font-size: 13px;
+  color: #e06666;
+  text-decoration: none;
+}
+
+a {
+  font-size: 16px;
+  color: #e06666;
+  text-decoration: none;
+}
+
+.publication-authors {
+  font-size: 16px;
+}
+
+.publication-venue {
+  font-size: 16px;
+}
+
+.publication-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
+
+
+
+.publication-links {
+  margin-top: 8px;
+}
+
+.publication-links a {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-right: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: rgb(32,33,36);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.publication-links a:hover {
+  background-color: #e8e8e8;
+  color: rgb(32,33,36);
+}
+
+.publication-links a:last-child {
+  margin-right: 0;
+}
+
+.author-highlight {
+  color: #e06666; /* Using the same red color as your links for consistency */
+  font-weight: 500;
+}
